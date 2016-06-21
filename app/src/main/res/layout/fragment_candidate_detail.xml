@@ -76,13 +76,13 @@
 
   </LinearLayout>
 
-  <android.support.design.widget.FloatingActionButton
-      android:layout_width="52dp"
-      android:layout_height="52dp"
-      android:layout_gravity="end"
-      android:layout_marginEnd="@dimen/spacing_large"
-      android:layout_marginTop="170dp"
-      android:src="@drawable/ic_action_play"
-      app:backgroundTint="@color/primary_text_white"
-      />
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/speechButton"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:layout_gravity="end"
+        android:layout_marginEnd="@dimen/spacing_large"
+        android:layout_marginTop="170dp"
+        android:src="@drawable/ic_action_play"
+        app:backgroundTint="@color/primary_text_white"/>
 </FrameLayout>

@@ -5,10 +5,10 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.View
 import com.android.votechain.R
 import com.android.votechain.candidates.domain.model.Candidate
+import com.android.votechain.candidates.view.dialog.CandidateProposalDialog
 import com.android.votechain.common.view.BaseFragment
 import com.android.votechain.common.view.loadURL
 import kotlinx.android.synthetic.main.fragment_candidate_detail.*
-import kotlinx.android.synthetic.main.item_candidate.*
 
 
 class CandidateDetailFragment() : BaseFragment(), CandidateDetailView.View {
@@ -46,8 +46,7 @@ class CandidateDetailFragment() : BaseFragment(), CandidateDetailView.View {
         list_proposals.setHasFixedSize(true)
         list_proposals.layoutManager = LinearLayoutManager(context)
         list_proposals.adapter = adapter
-
-
+        speechButton.setOnClickListener({view -> presenter.textToSpeech()})
 
     }
 
@@ -62,5 +61,9 @@ class CandidateDetailFragment() : BaseFragment(), CandidateDetailView.View {
         candidateImage.loadURL(candidate?.photoUrl)
 
         adapter.addProposals(candidate?.proposals?.toList())
+    }
+
+    override fun saySpeech(speech: String?) {
+        CandidateProposalDialog.newInstance(speech).show(fragmentManager, "Speech")
     }
 }
