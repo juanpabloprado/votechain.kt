@@ -15,4 +15,5 @@
     <string name="message_error_list_touch_connection">Toque la pantalla para volver a intentarlo</string>
     <string name="label_proposals">Propuestas</string>
     <string name="title_candidates">Candidatos</string>
+    <string name="ok">Aceptar</string>
 </resources>

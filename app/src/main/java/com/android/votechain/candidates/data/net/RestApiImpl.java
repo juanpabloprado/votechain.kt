@@ -9,10 +9,10 @@ import rx.Observable;
 /**
  * 16/06/2016.
  */
-public class RestApiImpl extends ApiClient<LoginApiService> implements RestApi {
+public class RestApiImpl extends ApiClient<CandidateApiService> implements RestApi {
 
-  @Override protected Class<LoginApiService> getApiService() {
-    return LoginApiService.class;
+  @Override protected Class<CandidateApiService> getApiService() {
+    return CandidateApiService.class;
   }
 
   @Override protected String getBaseURL() {

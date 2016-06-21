@@ -10,7 +10,7 @@ import rx.Observable;
 /**
  * 16/06/2016.
  */
-public interface LoginApiService {
+public interface CandidateApiService {
 
   @GET(ClientConstants.EndPointApi.CANDIDATES) Observable<List<Candidate>> getCandidates();
 

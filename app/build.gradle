@@ -60,6 +60,9 @@ dependencies {
     compile retrofitDependencies.rxJava
     compile retrofitDependencies.loggingInterceptor
     compile retrofitDependencies.okHttp
+
+    compile 'com.wang.avi:library:1.0.0'
+    compile 'com.nineoldandroids:library:2.4.0'
 }
 
 repositories {
