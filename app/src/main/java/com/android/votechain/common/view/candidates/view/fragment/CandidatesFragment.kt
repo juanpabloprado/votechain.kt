@@ -1,20 +1,24 @@
 package com.android.votechain.common.view.candidates.view.fragment
 
-import android.support.v4.app.Fragment
+import android.os.Bundle
+import android.view.View
+import com.android.votechain.R
 import com.android.votechain.common.view.BaseFragment
 
-/**
- * A simple [Fragment] subclass.
- * Activities that contain this fragment must implement the
- * [CandidatesFragment.OnFragmentInteractionListener] interface
- * to handle interaction events.
- * Use the [CandidatesFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class CandidatesFragment : BaseFragment() {
+
   companion object {
     fun newInstance(): CandidatesFragment {
       return CandidatesFragment()
     }
   }
+
+  override fun getFragmentLayout(): Int {
+    return R.layout.fragment_candidates
+  }
+
+  override fun initView(view: View?, savedInstanceState: Bundle?) {
+    super.initView(view, savedInstanceState)
+  }
+
 }

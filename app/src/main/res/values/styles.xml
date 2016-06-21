@@ -1,11 +1,33 @@
 <resources>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/primary</item>
-        <item name="colorPrimaryDark">@color/primary_dark</item>
-        <item name="colorAccent">@color/accent</item>
-    </style>
+  <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <item name="colorPrimary">@color/primary</item>
+    <item name="colorPrimaryDark">@color/primary_dark</item>
+    <item name="android:textColor">@color/primary_text_black</item>
+    <item name="android:textColorPrimary">@color/primary_text_black</item>
+    <item name="android:textColorSecondary">@color/secondary_text_black</item>
+    <item name="android:divider">@color/divider_black</item>
+    <item name="android:textColorHint">@color/hint_text_black</item>
+    <item name="colorControlHighlight">@color/divider_black</item>
+    <item name="colorButtonNormal">@color/primary</item>
+    <item name="android:windowBackground">@color/window_background</item>
+    <item name="android:listDivider">@color/divider_black</item>
+
+  </style>
+
+  <style name="AppTheme.White" parent="AppTheme">
+    <item name="colorPrimary">@color/window_background</item>
+    <item name="colorPrimaryDark">@color/window_background_dark</item>
+  </style>
+
+  <style name="AppTheme.White.Toolbar" parent="ThemeOverlay.AppCompat.Light">
+    <item name="android:textColorPrimary">@color/secondary_text_black</item>
+    <item name="android:textColorSecondary">@color/hint_text_black</item>
+  </style>
+
+
+  <style name="AppTheme.HomeActivityTheme" parent="AppTheme">
+  </style>
+
 
 </resources>

@@ -4,13 +4,11 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.annotation.AnimRes
 import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentManager
 import android.support.v7.app.ActionBar
 import android.support.v7.widget.Toolbar
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import kotlinx.android.synthetic.main.toolbar.*
 
 /**
  * 27/11/15.
@@ -26,17 +24,18 @@ import kotlinx.android.synthetic.main.toolbar.*
 
 abstract class BaseFragment : Fragment() {
 
-
   override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
       savedInstanceState: Bundle?): View? {
     return inflater?.inflate(getFragmentLayout(), container, false)
   }
 
-  abstract   fun getFragmentLayout(): Int
+  abstract fun getFragmentLayout(): Int
 
   override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
     setupActionBar(getSupportActionBar())
+    initView(view, savedInstanceState)
+
   }
 
   private fun getSupportActionBar(): ActionBar? {
@@ -44,6 +43,10 @@ abstract class BaseFragment : Fragment() {
   }
 
   open fun setupActionBar(actionBar: ActionBar?) {
+
+  }
+
+  open fun initView(view: View?, savedInstanceState: Bundle?) {
 
   }
 
@@ -84,7 +87,7 @@ abstract class BaseFragment : Fragment() {
     (activity as BaseFragActivity).popFragment()
   }
 
-   fun getToolbar() : Toolbar? {
+  fun getToolbar(): Toolbar? {
     return (activity as BaseActivity).toolbar;
   }
 

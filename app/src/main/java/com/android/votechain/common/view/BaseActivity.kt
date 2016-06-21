@@ -8,7 +8,7 @@ import com.android.votechain.R
 
 abstract class BaseActivity : AppCompatActivity() {
 
-  private val toolbar: Toolbar? by lazy {
+  val toolbar: Toolbar? by lazy {
     findViewById(R.id.toolbar) as Toolbar
   };
 
