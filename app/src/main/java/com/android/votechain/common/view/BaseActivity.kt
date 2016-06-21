@@ -35,7 +35,7 @@ abstract class BaseActivity : AppCompatActivity() {
   }
 
   private fun setupToolbar() {
-    toolbar = findViewById(R.id.toolbar) as Toolbar
+    toolbar = findViewById(R.id.toolbar) as Toolbar?
 
     if (toolbar != null)
       setSupportActionBar(toolbar)
