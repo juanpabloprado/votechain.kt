@@ -4,6 +4,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.ViewGroup
 import com.android.votechain.R
 import com.android.votechain.candidates.domain.model.Candidate
+import com.android.votechain.candidates.view.presenter.CandidatesPresenter
 import com.android.votechain.common.view.inflate
 
 /**
@@ -11,9 +12,13 @@ import com.android.votechain.common.view.inflate
  */
 class CandidatesAdapter : RecyclerView.Adapter<CandidateViewHolder>() {
 
+  private var presenter: CandidatesPresenter? = null
+
+
   private val candidates by lazy {
     mutableListOf<Candidate>()
   }
+
 
   override fun getItemCount(): Int {
     return candidates.size
@@ -27,7 +32,6 @@ class CandidatesAdapter : RecyclerView.Adapter<CandidateViewHolder>() {
     this.candidates.addAll(candidates)
     notifyDataSetChanged()
   }
-
 
   override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): CandidateViewHolder? {
     val viewItem = parent?.inflate(R.layout.item_candidate)
