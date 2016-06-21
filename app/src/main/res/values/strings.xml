@@ -3,7 +3,12 @@
     <string name="label_tutorial_button">Votar ahora</string>
     <string name="label_welcome_fragment">Bienvenido a Votechain</string>
     <string name="label_candidate_fragment">Conoce a los candidatos</string>
-    <string name="label_proposal_fragment">Lee sus propuestas</string>
+    <string name="label_proposal_fragment">Escucha sus propuestas</string>
     <string name="label_vote_fragment">Vota por tu favorito</string>
+    <string name="label_welcome_description">El primer sistema de votación open source</string>
+    <string name="label_candidates_description">Quiénes y por qué fueron elegidos</string>
+    <string name="label_proposal_description">Informate sobre todo aquello \nque quieren mejorar en el país</string>
+    <string name="label_vote_description">¿Estás listo para decidir quién será \nnuestro próximo gobernante?</string>
+
     <string name="candidate">candidate</string>
 </resources>

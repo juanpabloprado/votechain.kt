@@ -8,20 +8,20 @@ import com.android.votechain.common.view.candidates.view.fragment.CandidatesFrag
 
 class CandidatesActivity : BaseFragActivity() {
 
-  override fun setupActionBar(supportActionBar: ActionBar?) {
-    super.setupActionBar(supportActionBar)
-    supportActionBar?.setDisplayHomeAsUpEnabled(true)
-  }
+    override fun setupActionBar(supportActionBar: ActionBar?) {
+        super.setupActionBar(supportActionBar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+    }
 
-  override fun getLayout(): Int {
-    return R.layout.activity_candidates
-  }
+    override fun getLayout(): Int {
+        return R.layout.activity_candidates
+    }
 
-  override fun getIdFragmentContainer(): Int {
-    return R.id.fragment_container
-  }
+    override fun getIdFragmentContainer(): Int {
+        return R.id.fragment_container
+    }
 
-  override fun getFragmentInstance(): Fragment {
-    return CandidatesFragment.newInstance()
-  }
+    override fun getFragmentInstance(): Fragment {
+        return CandidatesFragment.newInstance()
+    }
 }
