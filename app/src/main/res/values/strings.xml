@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Votechain</string>
+    <string name="label_tutorial_button">Votar ahora</string>
+    <string name="label_welcome_fragment">Bienvenido a Votechain</string>
+    <string name="label_candidate_fragment">Conoce a los candidatos</string>
+    <string name="label_proposal_fragment">Lee sus propuestas</string>
+    <string name="label_vote_fragment">Vota por tu favorito</string>
 </resources>
