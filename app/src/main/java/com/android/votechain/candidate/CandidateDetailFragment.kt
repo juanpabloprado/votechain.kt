@@ -1,5 +1,8 @@
 package com.android.votechain.candidate
 
+import android.os.Bundle
+import android.support.v7.widget.LinearLayoutManager
+import android.view.View
 import com.android.votechain.R
 import com.android.votechain.candidates.domain.model.Candidate
 import com.android.votechain.common.view.BaseFragment

@@ -4,11 +4,11 @@
     <string name="label_welcome_fragment">Bienvenido a Votechain</string>
     <string name="label_candidate_fragment">Conoce a los candidatos</string>
     <string name="label_proposal_fragment">Escucha sus propuestas</string>
-    <string name="label_vote_fragment">Vota por tu favorito</string>
+    <string name="label_vote_fragment">Decide tu futuro</string>
     <string name="label_welcome_description">El primer sistema de votación open source</string>
-    <string name="label_candidates_description">Quiénes y por qué fueron elegidos</string>
+    <string name="label_candidates_description">Quiénes y qué proponen</string>
     <string name="label_proposal_description">Informate sobre todo aquello \nque quieren mejorar en el país</string>
-    <string name="label_vote_description">¿Estás listo para decidir quién será \nnuestro próximo gobernante?</string>
+    <string name="label_vote_description">¿Estás listo para elegir quién será \nnuestro próximo gobernante?</string>
 
     <string name="candidate">candidate</string>
     <string name="message_error_list_connection">Ocurrio un problema</string>
