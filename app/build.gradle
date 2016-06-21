@@ -30,7 +30,9 @@ dependencies {
   compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
   compile supportDependencies.appCompat
   compile supportDependencies.cardView
+  compile supportDependencies.recyclerView
   compile circleImageView
+  compile glide
 }
 repositories {
   mavenCentral()

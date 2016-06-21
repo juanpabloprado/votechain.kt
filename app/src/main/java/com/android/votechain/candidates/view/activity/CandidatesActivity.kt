@@ -1,10 +1,10 @@
-package com.android.votechain.common.view.candidates.view.activity
+package com.android.votechain.candidates.view.activity
 
 import android.support.v4.app.Fragment
 import android.support.v7.app.ActionBar
 import com.android.votechain.R
 import com.android.votechain.common.view.BaseFragActivity
-import com.android.votechain.common.view.candidates.view.fragment.CandidatesFragment
+import com.android.votechain.candidates.view.fragment.CandidatesFragment
 
 class CandidatesActivity : BaseFragActivity() {
 

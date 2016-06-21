@@ -1,4 +1,4 @@
-package com.android.votechain.common.view.candidates.view.fragment
+package com.android.votechain.candidates.view.fragment
 
 import android.os.Bundle
 import android.view.View

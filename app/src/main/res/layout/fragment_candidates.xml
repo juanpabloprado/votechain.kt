@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="horizontal"
     android:weightSum="2"
-    tools:context="com.android.votechain.common.view.candidates.view.fragment.CandidatesFragment"
+    tools:context=".candidates.view.fragment.CandidatesFragment"
     >
 
   <include

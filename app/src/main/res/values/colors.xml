@@ -18,5 +18,10 @@
   <color name="hint_text_white">#4CFFFFFF</color>
   <color name="divider_white">#1Effffff</color>
 
+  <color name="pan">#00458E</color>
+  <color name="pri">#E82529</color>
+  <color name="prd">#FBC201</color>
+  <color name="na">#00A7B5</color>
+
 
 </resources>
