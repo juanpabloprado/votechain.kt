@@ -5,29 +5,63 @@
              android:background="@color/primary">
 
     <LinearLayout
-        android:id="@+id/topProfile"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:background="@color/primary_dark"
-        android:gravity="center"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_width="90dp"
-            android:layout_height="90dp"
-            android:background="@color/primary_text_white"/>
+        <LinearLayout
+            android:id="@+id/topProfile"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@color/primary_dark"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/candidateImage"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:background="@color/primary_text_white"/>
+
+            <TextView
+                android:id="@+id/candidateName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_large"
+                android:text="Candidato"
+                android:textColor="@color/primary_text_white"
+                android:textSize="@dimen/letter_xlarge"/>
+
+            <TextView
+                android:id="@+id/politicParty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_medium"
+                android:text="Partido"
+                android:textColor="@color/primary_text_white"
+                android:textSize="@dimen/letter_medium"/>
+        </LinearLayout>
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/spacing_large"
-            android:text="@string/app_name"
+            android:padding="@dimen/spacing_large"
+            android:text="@string/label_proposals"
             android:textColor="@color/primary_text_white"
-            android:textSize="@dimen/letter_xlarge"/>
-    </LinearLayout>
-    <android.support.v7.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+            android:textSize="@dimen/letter_large"/>
 
-    </android.support.v7.widget.RecyclerView>
-    </FrameLayout>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/list_proposals"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:layout_gravity="end"
+        android:layout_marginEnd="@dimen/spacing_large"
+        android:layout_marginTop="170dp"
+        android:src="@drawable/ic_action_play"/>
+</FrameLayout>

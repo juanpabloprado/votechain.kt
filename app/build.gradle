@@ -38,27 +38,28 @@ android {
 }
 
 dependencies {
-  compile fileTree(dir: 'libs', include: ['*.jar'])
-  testCompile 'junit:junit:4.12'
-  compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-  compile supportDependencies.appCompat
-  compile supportDependencies.cardView
-  compile supportDependencies.recyclerView
-  compile circleImageView
-  compile 'me.relex:circleindicator:1.2.1@aar'
-  compile glide
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    compile supportDependencies.appCompat
+    compile supportDependencies.cardView
+    compile supportDependencies.recyclerView
+    compile circleImageView
+    compile 'me.relex:circleindicator:1.2.1@aar'
+    compile glide
+    compile supportDependencies.design
 
-  compile butterKnifeDependencies.butterknife
-  apt butterKnifeDependencies.butterknifeCompiler
+    compile butterKnifeDependencies.butterknife
+    apt butterKnifeDependencies.butterknifeCompiler
 
-  compile rxDependencies.rxJava
-  compile rxDependencies.rxAndroid
+    compile rxDependencies.rxJava
+    compile rxDependencies.rxAndroid
 
-  compile retrofitDependencies.retrofit
-  compile retrofitDependencies.gson
-  compile retrofitDependencies.rxJava
-  compile retrofitDependencies.loggingInterceptor
-  compile retrofitDependencies.okHttp
+    compile retrofitDependencies.retrofit
+    compile retrofitDependencies.gson
+    compile retrofitDependencies.rxJava
+    compile retrofitDependencies.loggingInterceptor
+    compile retrofitDependencies.okHttp
 }
 
 repositories {
