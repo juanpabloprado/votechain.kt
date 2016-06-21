@@ -7,10 +7,4 @@
     tools:context=".candidates.view.fragment.CandidatesFragment"
     >
 
-  <include
-      layout="@layout/item_candidate"
-      android:layout_width="0dp"
-      android:layout_height="wrap_content"
-      android:layout_weight="1"
-      />
 </LinearLayout>
