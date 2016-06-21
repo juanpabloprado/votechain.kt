@@ -11,4 +11,6 @@
     <string name="label_vote_description">¿Estás listo para decidir quién será \nnuestro próximo gobernante?</string>
 
     <string name="candidate">candidate</string>
+    <string name="message_error_list_connection">No se puede conectar</string>
+    <string name="message_error_list_touch_connection">Toque la pantalla para volver a intentarlo</string>
 </resources>
