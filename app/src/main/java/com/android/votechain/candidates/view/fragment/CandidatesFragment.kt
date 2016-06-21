@@ -43,6 +43,7 @@ class CandidatesFragment : BaseFragment(), CandidatesView {
     super.initView(view, savedInstanceState)
     initializePresenter()
     initializeList ()
+    initializeMessageError()
     retainInstance = true
   }
 
@@ -60,6 +61,9 @@ class CandidatesFragment : BaseFragment(), CandidatesView {
     listCandidates.addItemDecoration(ItemGridDecorator(context))
   }
 
+  private fun initializeMessageError() {
+    messageConnectionError.setOnClickListener { presenter.initialize() }
+  }
 
   override fun showLoadingCandidates() {
     progressLoadingCandidates.visibility = View.VISIBLE
@@ -83,7 +87,10 @@ class CandidatesFragment : BaseFragment(), CandidatesView {
   }
 
   override fun showDetailCandidate(candidateId: String, name: String) {
-    addFragment(CandidateDetailFragment.newInstance(candidateId, name),R.anim.slide_in_left, R.anim.slide_out_left,
+    addFragment(CandidateDetailFragment.newInstance(candidateId, name), R.anim.slide_in_left,
+        R.anim.slide_out_left,
         R.anim.slide_in_right, R.anim.slide_out_right)
+
   }
+
 }

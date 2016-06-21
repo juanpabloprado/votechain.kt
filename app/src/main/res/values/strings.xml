@@ -16,4 +16,5 @@
     <string name="label_proposals">Propuestas</string>
     <string name="title_candidates">Candidatos</string>
     <string name="label_candidate_button">Votar</string>
+    <string name="ok">Aceptar</string>
 </resources>
