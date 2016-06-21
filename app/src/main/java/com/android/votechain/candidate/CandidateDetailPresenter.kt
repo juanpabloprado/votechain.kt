@@ -14,7 +14,7 @@ class CandidateDetailPresenter(val view: CandidateDetailView.View) {
 
     lateinit var candidate: Candidate
 
-    val repository by lazy {
+    val repositoryCandidate by lazy {
         val repo: CandidatesRepository = ServerCandidatesRespository()
         repo
     }
