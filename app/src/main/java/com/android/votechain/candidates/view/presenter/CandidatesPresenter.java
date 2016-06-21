@@ -21,6 +21,7 @@ public class CandidatesPresenter extends Presenter<CandidatesView> {
 
   @Override public void initialize() {
     super.initialize();
+    getView().hideMessageErrorConnection();
     getView().showLoadingCandidates();
     candidatesRepository.getCandidates(new CandidateSubscriber());
 
@@ -37,14 +38,12 @@ public class CandidatesPresenter extends Presenter<CandidatesView> {
     }
 
     @Override public void onError(Throwable e) {
-
+      getView().showMessageErrorConnection();
     }
 
     @Override public void onNext(List<Candidate> candidates) {
       getView().hideLoadingCandidates();
-      getView().showMessageErrorConnection();
-
-
+      getView().showListCandidates(candidates);
     }
   }
 }
