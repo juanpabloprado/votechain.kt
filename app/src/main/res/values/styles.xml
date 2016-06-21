@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
   <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
     <item name="colorPrimary">@color/primary</item>
@@ -24,9 +24,9 @@
     <item name="android:textColorPrimary">@color/secondary_text_black</item>
     <item name="android:textColorSecondary">@color/hint_text_black</item>
   </style>
-
-
-  <style name="AppTheme.HomeActivityTheme" parent="AppTheme">
+  
+  <style name="AppTheme.TutorialActivity" parent="AppTheme">
+    <item name="android:windowTranslucentStatus" tools:targetApi="kitkat">true</item>
   </style>
 
 

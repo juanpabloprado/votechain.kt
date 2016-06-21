@@ -1,8 +1,14 @@
 package com.android.votechain.tutorial
 
+import android.animation.ArgbEvaluator
+import android.animation.ValueAnimator
+import android.annotation.TargetApi
+import android.os.Build
 import android.support.v4.view.ViewPager
+import android.view.WindowManager
 import com.android.votechain.R
 import com.android.votechain.common.view.BaseActivity
+import com.android.votechain.common.view.getCompatColor
 import me.relex.circleindicator.CircleIndicator
 
 class TutorialActivity : BaseActivity() {
@@ -24,12 +30,41 @@ class TutorialActivity : BaseActivity() {
         circles
     }
 
+    val colorAnimator by lazy {
+        val animator: ValueAnimator = ValueAnimator.ofObject(ArgbEvaluator(), getCompatColor(R.color.purple), getCompatColor(R.color.indigo), getCompatColor(R.color.teal), getCompatColor(R.color.orange))
+        animator.addUpdateListener { animator -> pager.setBackgroundColor(animator.getAnimatedValue() as Int) }
+        animator.duration = ((4 - 1) * 10000000000).toLong();
+        animator
+    }
+
     override fun getLayout(): Int {
         return R.layout.activity_tutorial
     }
 
     override fun initView() {
         super.initView()
-        pager
+        pager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
+            override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
+                colorAnimator.currentPlayTime = ((positionOffset + position) * 10000000000).toLong()
+            }
+
+            override fun onPageScrollStateChanged(state: Int) {
+            }
+
+            override fun onPageSelected(position: Int) {
+            }
+        })
+
+        if (Build.VERSION.SDK_INT >= 19)
+            setStatusBarTranslucent(true)
+    }
+
+    @TargetApi(Build.VERSION_CODES.KITKAT)
+    fun setStatusBarTranslucent(makeTranslucent: Boolean) {
+        if (makeTranslucent) {
+            window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        } else {
+            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        }
     }
 }

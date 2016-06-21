@@ -23,5 +23,9 @@
   <color name="prd">#FBC201</color>
   <color name="na">#00A7B5</color>
 
+  <color name="purple">#ab47bc</color>
+  <color name="indigo">#3f51b5</color>
+  <color name="teal">#009688</color>
+  <color name="orange">#ff9100</color>
 
 </resources>

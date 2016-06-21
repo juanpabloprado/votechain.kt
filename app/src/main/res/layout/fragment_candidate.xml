@@ -2,20 +2,28 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:orientation="vertical">
+              android:layout_marginBottom="112dp"
+              android:gravity="center"
+              android:orientation="vertical"
+              android:padding="@dimen/spacing_huge">
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"/>
+        android:layout_height="wrap_content"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
         android:text="@string/label_candidate_fragment"
+        android:textColor="@color/primary_text_white"
         android:textSize="@dimen/letter_xlarge"
-        android:layout_marginBottom="@dimen/spacing_large"
         android:textStyle="bold"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_medium"
+        android:text="@string/label_candidates_description"
+        android:textColor="@color/primary_text_white"
+        android:textSize="@dimen/letter_small"/>
 </LinearLayout>
