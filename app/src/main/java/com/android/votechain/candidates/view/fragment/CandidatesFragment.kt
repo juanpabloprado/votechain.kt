@@ -5,6 +5,7 @@ import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
 import android.view.View
 import com.android.votechain.R
+import com.android.votechain.candidate.CandidateDetailFragment
 import com.android.votechain.candidates.domain.model.Candidate
 import com.android.votechain.candidates.view.adapter.CandidatesAdapter
 import com.android.votechain.candidates.view.presenter.CandidatesPresenter
@@ -19,13 +20,13 @@ class CandidatesFragment : BaseFragment(), CandidatesView {
     CandidatesPresenter()
   };
 
-  private val myListCandidates by lazy {
-    listCandidates.setHasFixedSize(true)
-    listCandidates.layoutManager = GridLayoutManager(context, 2)
-    listCandidates.adapter = CandidatesAdapter()
-    listCandidates.addItemDecoration(ItemGridDecorator(context))
-    listCandidates
-  }
+//  private val myListCandidates by lazy {
+//    listCandidates.setHasFixedSize(true)
+//    listCandidates.layoutManager = GridLayoutManager(context, 2)
+//    listCandidates.adapter = CandidatesAdapter(presenter)
+//    listCandidates.addItemDecoration(ItemGridDecorator(context))
+//    listCandidates
+//  }
 
 
   companion object {
@@ -41,12 +42,24 @@ class CandidatesFragment : BaseFragment(), CandidatesView {
   override fun initView(view: View?, savedInstanceState: Bundle?) {
     super.initView(view, savedInstanceState)
     initializePresenter()
+    initializeList ()
+    retainInstance = true
   }
+
 
   private fun initializePresenter() {
     presenter.view = this
     presenter.initialize()
+
   }
+
+  private fun initializeList() {
+    listCandidates.setHasFixedSize(true)
+    listCandidates.layoutManager = GridLayoutManager(context, 2)
+    listCandidates.adapter = CandidatesAdapter(presenter)
+    listCandidates.addItemDecoration(ItemGridDecorator(context))
+  }
+
 
   override fun showLoadingCandidates() {
     progressLoadingCandidates.visibility = View.VISIBLE
@@ -66,7 +79,13 @@ class CandidatesFragment : BaseFragment(), CandidatesView {
   }
 
   override fun showListCandidates(candidates: List<Candidate>) {
-    (myListCandidates.adapter as CandidatesAdapter).setCandidates(candidates)
+    (listCandidates.adapter as CandidatesAdapter).setCandidates(candidates)
   }
+
+  override fun showDetailCandidate(candidateId: String, name: String) {
+    addFragment(CandidateDetailFragment.newInstance(candidateId, name),R.anim.slide_in_left, R.anim.slide_out_left,
+        R.anim.slide_in_right, R.anim.slide_out_right)
+  }
+
 
 }

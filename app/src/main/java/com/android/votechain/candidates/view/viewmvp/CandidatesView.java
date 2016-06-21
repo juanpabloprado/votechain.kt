@@ -18,4 +18,6 @@ public interface CandidatesView extends Presenter.View {
   void hideMessageErrorConnection();
 
   void showListCandidates(List<Candidate> candidates);
+
+  void showDetailCandidate(String candidateId, String name);
 }

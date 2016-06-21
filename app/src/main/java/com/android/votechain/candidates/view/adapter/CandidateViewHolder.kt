@@ -5,13 +5,15 @@ import android.support.v7.widget.RecyclerView
 import android.view.View
 import com.android.votechain.R
 import com.android.votechain.candidates.domain.model.Candidate
+import com.android.votechain.candidates.view.presenter.CandidatesPresenter
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.item_candidate.view.*
 
 /**
  * 21/06/2016.
  */
-class CandidateViewHolder(view: View?) : RecyclerView.ViewHolder(view) {
+class CandidateViewHolder(var presenter: CandidatesPresenter?, view: View?) : RecyclerView.ViewHolder(view) {
+
 
 
   fun bindItem(candidate: Candidate) {
@@ -22,6 +24,9 @@ class CandidateViewHolder(view: View?) : RecyclerView.ViewHolder(view) {
     Glide.with(itemView.context).load(candidate.politicPartyImageUrl).centerCrop().crossFade().into(
         itemView.imagePoliticParty)
     itemView.setBackgroundColor(getColorPoliticParty(candidate.politicPartyId))
+
+    itemView.setOnClickListener { presenter?.selectCandidate(candidate) }
+
   }
 
   private fun getColorPoliticParty(candidateId: Int): Int {

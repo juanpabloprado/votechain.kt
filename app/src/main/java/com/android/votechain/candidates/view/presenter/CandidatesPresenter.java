@@ -26,6 +26,13 @@ public class CandidatesPresenter extends Presenter<CandidatesView> {
     candidatesRepository.getCandidates(new CandidateSubscriber());
   }
 
+  public void selectCandidate(Candidate candidate)
+  {
+    getView().showDetailCandidate(candidate.getCandidateId(),candidate.getName());
+  }
+
+
+
   @Override public void destroy() {
 
   }

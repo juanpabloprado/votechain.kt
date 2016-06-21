@@ -6,7 +6,15 @@ import com.android.votechain.common.view.BaseFragment
 
 class CandidateDetailFragment : BaseFragment() {
 
-    override fun getFragmentLayout(): Int {
-        return R.layout.fragment_candidate_detail
+
+  companion object {
+    fun newInstance(idCandidate: String?, name: String?): CandidateDetailFragment {
+      return CandidateDetailFragment()
     }
+  }
+
+
+  override fun getFragmentLayout(): Int {
+    return R.layout.fragment_candidate_detail
+  }
 }

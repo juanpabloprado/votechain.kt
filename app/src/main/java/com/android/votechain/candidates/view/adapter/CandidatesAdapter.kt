@@ -10,9 +10,7 @@ import com.android.votechain.common.view.inflate
 /**
  * 21/06/2016.
  */
-class CandidatesAdapter : RecyclerView.Adapter<CandidateViewHolder>() {
-
-  private var presenter: CandidatesPresenter? = null
+class CandidatesAdapter(var presenter: CandidatesPresenter? ) : RecyclerView.Adapter<CandidateViewHolder>() {
 
 
   private val candidates by lazy {
@@ -35,6 +33,6 @@ class CandidatesAdapter : RecyclerView.Adapter<CandidateViewHolder>() {
 
   override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): CandidateViewHolder? {
     val viewItem = parent?.inflate(R.layout.item_candidate)
-    return CandidateViewHolder(viewItem)
+    return CandidateViewHolder(presenter,viewItem)
   }
 }

@@ -34,7 +34,7 @@
             android:id="@+id/buttonVote"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@drawable/tutorial_background_button"
+            android:background="?attr/selectableItemBackground"
             android:text="@string/label_tutorial_button"
             android:textColor="@color/primary_text_white"
             android:fontFamily="sans-serif"/>
