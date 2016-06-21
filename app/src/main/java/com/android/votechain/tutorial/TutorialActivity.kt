@@ -7,8 +7,11 @@ import android.os.Build
 import android.support.v4.view.ViewPager
 import android.view.WindowManager
 import com.android.votechain.R
+import com.android.votechain.candidates.view.activity.CandidatesActivity
 import com.android.votechain.common.view.BaseActivity
 import com.android.votechain.common.view.getCompatColor
+import com.android.votechain.common.view.startActivity
+import kotlinx.android.synthetic.main.activity_tutorial.*
 import me.relex.circleindicator.CircleIndicator
 
 class TutorialActivity : BaseActivity() {
@@ -57,6 +60,8 @@ class TutorialActivity : BaseActivity() {
 
         if (Build.VERSION.SDK_INT >= 19)
             setStatusBarTranslucent(true)
+
+        buttonVote.setOnClickListener { startActivity(CandidatesActivity::class.java) }
     }
 
     @TargetApi(Build.VERSION_CODES.KITKAT)
