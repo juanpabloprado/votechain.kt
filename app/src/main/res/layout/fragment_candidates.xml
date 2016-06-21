@@ -16,8 +16,6 @@
 
   <android.support.v7.widget.RecyclerView
       android:clipToPadding="false"
-      android:paddingTop="@dimen/spacing_xmedium"
-      android:paddingBottom="@dimen/spacing_xmedium"
       android:id="@+id/listCandidates"
       android:layout_width="match_parent"
       android:layout_height="match_parent"

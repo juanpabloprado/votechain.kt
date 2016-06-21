@@ -1,21 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.android.votechain">
+    package="com.android.votechain">
 
-    <application
-        android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".tutorial.TutorialActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+  <uses-permission android:name="android.permission.INTERNET"/>
 
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
-        </activity>
-        <activity android:name=".candidates.view.activity.CandidatesActivity"/>
-    </application>
+  <application
+      android:allowBackup="true"
+      android:icon="@mipmap/ic_launcher"
+      android:label="@string/app_name"
+      android:supportsRtl="true"
+      android:theme="@style/AppTheme">
+    <activity android:name=".tutorial.TutorialActivity">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN"/>
+
+        <category android:name="android.intent.category.LAUNCHER"/>
+      </intent-filter>
+    </activity>
+    <activity
+        android:name=".candidates.view.activity.CandidatesActivity"
+        android:parentActivityName=".tutorial.TutorialActivity"
+        android:label="@string/title_candidates">
+      <meta-data
+          android:name="android.support.PARENT_ACTIVITY"
+          android:value=".tutorial.TutorialActivity"/>
+
+    </activity>
+  </application>
 
 </manifest>

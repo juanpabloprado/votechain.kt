@@ -1,6 +1,7 @@
 package com.android.votechain.candidates.view.fragment
 
 import android.os.Bundle
+import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
 import android.view.View
 import com.android.votechain.R
@@ -9,6 +10,7 @@ import com.android.votechain.candidates.view.adapter.CandidatesAdapter
 import com.android.votechain.candidates.view.presenter.CandidatesPresenter
 import com.android.votechain.candidates.view.viewmvp.CandidatesView
 import com.android.votechain.common.view.BaseFragment
+import com.android.votechain.view.ItemGridDecorator
 import kotlinx.android.synthetic.main.fragment_candidates.*
 
 class CandidatesFragment : BaseFragment(), CandidatesView {
@@ -19,8 +21,9 @@ class CandidatesFragment : BaseFragment(), CandidatesView {
 
   private val myListCandidates by lazy {
     listCandidates.setHasFixedSize(true)
-    listCandidates.layoutManager = LinearLayoutManager(context)
+    listCandidates.layoutManager = GridLayoutManager(context, 2)
     listCandidates.adapter = CandidatesAdapter()
+    listCandidates.addItemDecoration(ItemGridDecorator(context))
     listCandidates
   }
 
