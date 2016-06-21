@@ -9,6 +9,8 @@ import android.support.v7.app.AppCompatActivity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import com.bumptech.glide.Glide
 
 
 fun ViewGroup.inflate(layoutResId: Int, attachToRoot: Boolean = false): View {
@@ -27,4 +29,12 @@ fun Fragment.startActivity(c: Class<*>) {
 fun AppCompatActivity.startActivity(c: Class<*>) {
     val intent: Intent = Intent(baseContext, c)
     startActivity(intent)
+}
+
+fun ImageView.loadURL(url: String?) {
+    Glide
+            .with(context)
+            .load(url)
+            .fitCenter()
+            .into(this)
 }

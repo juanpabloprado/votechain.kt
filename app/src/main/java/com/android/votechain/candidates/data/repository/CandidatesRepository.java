@@ -13,5 +13,4 @@ public interface CandidatesRepository {
   void getCandidates(Subscriber<List<Candidate>> UseCaseSubscriber);
   void  getCandidate(int idCandidate,Subscriber<Candidate> UseCaseSubscriber);
 
-
 }

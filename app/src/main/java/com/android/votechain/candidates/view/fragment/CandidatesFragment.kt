@@ -86,6 +86,4 @@ class CandidatesFragment : BaseFragment(), CandidatesView {
     addFragment(CandidateDetailFragment.newInstance(candidateId, name),R.anim.slide_in_left, R.anim.slide_out_left,
         R.anim.slide_in_right, R.anim.slide_out_right)
   }
-
-
 }
