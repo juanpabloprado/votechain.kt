@@ -46,6 +46,9 @@ class CandidateDetailFragment() : BaseFragment(), CandidateDetailView.View {
         list_proposals.setHasFixedSize(true)
         list_proposals.layoutManager = LinearLayoutManager(context)
         list_proposals.adapter = adapter
+
+
+
     }
 
     override fun onResume() {

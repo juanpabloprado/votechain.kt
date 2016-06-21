@@ -25,7 +25,7 @@ class CandidateViewHolder(var presenter: CandidatesPresenter?, view: View?) : Re
         itemView.imagePoliticParty)
     itemView.setBackgroundColor(getColorPoliticParty(candidate.politicPartyId))
 
-    itemView.setOnClickListener { presenter?.selectCandidate(candidate) }
+    itemView.setOnClickListener { presenter?.selectCandidate(candidate,itemView.imageCandidate) }
 
   }
 

@@ -9,7 +9,7 @@
     <item name="android:divider">@color/divider_black</item>
     <item name="android:textColorHint">@color/hint_text_black</item>
     <item name="colorControlHighlight">@color/divider_black</item>
-    <item name="colorButtonNormal">@color/primary</item>
+    <item name="colorButtonNormal">@color/button_color</item>
     <item name="android:windowBackground">@color/window_background</item>
     <item name="android:listDivider">@color/divider_black</item>
 

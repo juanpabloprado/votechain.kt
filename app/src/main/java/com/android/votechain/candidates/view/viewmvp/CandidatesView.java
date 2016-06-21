@@ -1,5 +1,6 @@
 package com.android.votechain.candidates.view.viewmvp;
 
+import android.widget.ImageView;
 import com.android.votechain.candidates.domain.model.Candidate;
 import com.android.votechain.common.view.java.Presenter;
 import java.util.List;
@@ -19,5 +20,5 @@ public interface CandidatesView extends Presenter.View {
 
   void showListCandidates(List<Candidate> candidates);
 
-  void showDetailCandidate(String candidateId, String name);
+  void showDetailCandidate(String candidateId, String name, ImageView imageView);
 }

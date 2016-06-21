@@ -1,9 +1,12 @@
 package com.android.votechain.candidates.view.fragment
 
+import android.os.Build
 import android.os.Bundle
+import android.support.annotation.AnimRes
 import android.support.v7.widget.GridLayoutManager
-import android.support.v7.widget.LinearLayoutManager
+import android.transition.TransitionInflater
 import android.view.View
+import android.widget.ImageView
 import com.android.votechain.R
 import com.android.votechain.candidate.CandidateDetailFragment
 import com.android.votechain.candidates.domain.model.Candidate
@@ -47,7 +50,6 @@ class CandidatesFragment : BaseFragment(), CandidatesView {
     retainInstance = true
   }
 
-
   private fun initializePresenter() {
     presenter.view = this
     presenter.initialize()
@@ -86,10 +88,41 @@ class CandidatesFragment : BaseFragment(), CandidatesView {
     (listCandidates.adapter as CandidatesAdapter).setCandidates(candidates)
   }
 
-  override fun showDetailCandidate(candidateId: String, name: String) {
+  override fun showDetailCandidate(candidateId: String, name: String, imageView: ImageView) {
+
     addFragment(CandidateDetailFragment.newInstance(candidateId, name), R.anim.slide_in_left,
         R.anim.slide_out_left,
         R.anim.slide_in_right, R.anim.slide_out_right)
+
+
+//    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+//      addFragmentTransition(CandidateDetailFragment.newInstance(candidateId, name),
+//          R.anim.slide_in_left,
+//          R.anim.slide_out_left,
+//          R.anim.slide_in_right, R.anim.slide_out_right,imageView)
+//    } else {
+//      addFragment(CandidateDetailFragment.newInstance(candidateId, name), R.anim.slide_in_left,
+//          R.anim.slide_out_left,
+//          R.anim.slide_in_right, R.anim.slide_out_right)
+//    }
+  }
+
+  private fun addFragmentTransition(newInstance: CandidateDetailFragment,@AnimRes enter: Int, @AnimRes exit: Int,
+      @AnimRes popEnter: Int, @AnimRes popExit: Int, imageView: ImageView) {
+    sharedElementEnterTransition = TransitionInflater.from(context).inflateTransition(
+        R.transition.change_image_trans)
+    newInstance.sharedElementEnterTransition = TransitionInflater.from(context).inflateTransition(
+        R.transition.change_image_trans)
+
+
+    fragmentManager.beginTransaction()
+        .setCustomAnimations(enter, exit, popEnter,
+            popExit)
+        .replace(R.id.fragment_container, newInstance)
+        .addToBackStack("")
+//        .addSharedElement(imageView, getString(R.string.fragment_image_trans))
+        .commit();
+
 
   }
 

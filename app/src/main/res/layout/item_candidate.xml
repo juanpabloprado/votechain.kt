@@ -20,6 +20,7 @@
       >
 
     <ImageView
+        android:transitionName="@string/fragment_image_trans"
         android:id="@+id/imageCandidate"
         android:layout_width="match_parent"
         android:layout_height="128dp"

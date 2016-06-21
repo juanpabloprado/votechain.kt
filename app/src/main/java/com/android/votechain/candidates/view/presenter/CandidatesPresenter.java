@@ -1,5 +1,6 @@
 package com.android.votechain.candidates.view.presenter;
 
+import android.widget.ImageView;
 import com.android.votechain.candidates.data.repository.CandidatesRepository;
 import com.android.votechain.candidates.data.repository.ServerCandidatesRespository;
 import com.android.votechain.candidates.domain.model.Candidate;
@@ -26,9 +27,9 @@ public class CandidatesPresenter extends Presenter<CandidatesView> {
     candidatesRepository.getCandidates(new CandidateSubscriber());
   }
 
-  public void selectCandidate(Candidate candidate)
+  public void selectCandidate(Candidate candidate, ImageView imageView)
   {
-    getView().showDetailCandidate(candidate.getCandidateId(),candidate.getName());
+    getView().showDetailCandidate(candidate.getCandidateId(),candidate.getName(),imageView);
   }
 
 
