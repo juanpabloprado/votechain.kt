@@ -10,9 +10,8 @@ import com.android.votechain.common.view.inflate
 
 
 class CandidateFragment : BaseFragment() {
-
-
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return container?.inflate(R.layout.fragment_candidate, false)
+    override fun getFragmentLayout(): Int {
+        return R.layout.fragment_candidate
     }
+
 }

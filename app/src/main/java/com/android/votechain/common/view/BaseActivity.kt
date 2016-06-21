@@ -9,6 +9,8 @@ import com.android.votechain.R
 abstract class BaseActivity : AppCompatActivity() {
 
 
+  var toolbar: Toolbar? = null
+
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContentView(getLayout())
@@ -28,12 +30,12 @@ abstract class BaseActivity : AppCompatActivity() {
 
   }
 
-  fun setupActionBar(supportActionBar: ActionBar?) {
+  open fun setupActionBar(supportActionBar: ActionBar?) {
 
   }
 
   private fun setupToolbar() {
-    val toolbar: Toolbar? = findViewById(R.id.toolbar) as Toolbar?
+    toolbar = findViewById(R.id.toolbar) as Toolbar
 
     if (toolbar != null)
       setSupportActionBar(toolbar)
