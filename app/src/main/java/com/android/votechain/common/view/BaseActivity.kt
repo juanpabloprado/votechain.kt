@@ -31,7 +31,7 @@ abstract class BaseActivity : AppCompatActivity() {
 
   }
 
-  fun setupActionBar(supportActionBar: ActionBar?) {
+  open fun setupActionBar(supportActionBar: ActionBar?) {
 
   }
 
