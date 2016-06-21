@@ -7,6 +7,7 @@ import com.android.votechain.common.data.cloud.cloud.ClientConstants;
 import java.util.List;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 import retrofit2.http.Path;
 import rx.Observable;
 
@@ -15,5 +16,5 @@ import rx.Observable;
  */
 public interface VoteApiService {
 
-  @GET(ClientConstants.EndPointApi.VOTE) Observable<ResponseVote> setVote(@Body Vote vote);
+  @POST(ClientConstants.EndPointApi.VOTE) Observable<ResponseVote> setVote(@Body Vote vote);
 }

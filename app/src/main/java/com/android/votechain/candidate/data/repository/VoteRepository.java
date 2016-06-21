@@ -13,5 +13,4 @@ public interface VoteRepository {
 
   void setVote(Vote vote,Subscriber<ResponseVote> UseCaseSubscriber);
 
-
 }

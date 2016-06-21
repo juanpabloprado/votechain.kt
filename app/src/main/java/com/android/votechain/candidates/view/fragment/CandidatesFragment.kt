@@ -2,6 +2,7 @@ package com.android.votechain.candidates.view.fragment
 
 import android.os.Bundle
 import android.support.v7.widget.GridLayoutManager
+import android.util.Log
 import android.view.View
 import com.android.votechain.R
 import com.android.votechain.candidate.CandidateDetailFragment
@@ -83,6 +84,9 @@ class CandidatesFragment : BaseFragment(), CandidatesView {
   override fun showDetailCandidate(candidateId: String, name: String) {
     addFragment(CandidateDetailFragment.newInstance(candidateId, name),R.anim.slide_in_left, R.anim.slide_out_left,
         R.anim.slide_in_right, R.anim.slide_out_right)
+
+
+
 
 //    val dialog: CandidateProposalDialog = CandidateProposalDialog.newInstance("Hola  todos")
 //    dialog.isCancelable = false
