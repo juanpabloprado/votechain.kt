@@ -31,6 +31,7 @@
             android:background="@color/window_background"/>
 
         <Button
+            android:id="@+id/buttonVote"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@drawable/tutorial_background_button"
