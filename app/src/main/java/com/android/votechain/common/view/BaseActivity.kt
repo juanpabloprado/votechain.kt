@@ -8,9 +8,8 @@ import com.android.votechain.R
 
 abstract class BaseActivity : AppCompatActivity() {
 
-  val toolbar: Toolbar? by lazy {
-    findViewById(R.id.toolbar) as Toolbar
-  };
+
+  var toolbar: Toolbar? = null
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -36,7 +35,10 @@ abstract class BaseActivity : AppCompatActivity() {
   }
 
   private fun setupToolbar() {
-    setSupportActionBar(toolbar)
+    toolbar = findViewById(R.id.toolbar) as Toolbar?
+
+    if (toolbar != null)
+      setSupportActionBar(toolbar)
   }
 
 }
