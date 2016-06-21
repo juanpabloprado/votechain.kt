@@ -10,7 +10,9 @@
       android:label="@string/app_name"
       android:supportsRtl="true"
       android:theme="@style/AppTheme">
-    <activity android:name=".tutorial.TutorialActivity">
+    <activity
+        android:name=".tutorial.TutorialActivity"
+        android:screenOrientation="portrait">
       <intent-filter>
         <action android:name="android.intent.action.MAIN"/>
 
@@ -19,11 +21,8 @@
     </activity>
     <activity
         android:name=".candidates.view.activity.CandidatesActivity"
-        android:parentActivityName=".tutorial.TutorialActivity"
-        android:label="@string/title_candidates">
-      <meta-data
-          android:name="android.support.PARENT_ACTIVITY"
-          android:value=".tutorial.TutorialActivity"/>
+        android:label="@string/title_candidates"
+        android:screenOrientation="portrait">
 
     </activity>
   </application>
