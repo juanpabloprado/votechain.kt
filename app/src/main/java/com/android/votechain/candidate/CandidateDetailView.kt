@@ -8,6 +8,8 @@ interface CandidateDetailView {
     interface View {
         fun showCandidateData(candidate: Candidate?)
 
+        fun saySpeech(speech: String?)
+
     }
 
     interface UserActionListener {

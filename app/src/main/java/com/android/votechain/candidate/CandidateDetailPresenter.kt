@@ -8,6 +8,8 @@ import rx.Subscriber
 
 class CandidateDetailPresenter(val view: CandidateDetailView.View) {
 
+    lateinit var candidate: Candidate
+
     val repository by lazy {
         val repo: CandidatesRepository = ServerCandidatesRespository()
         repo
@@ -18,12 +20,19 @@ class CandidateDetailPresenter(val view: CandidateDetailView.View) {
             override fun onCompleted() {
             }
 
-            override fun onNext(t: Candidate?) {
+            override fun onNext(t: Candidate) {
+                candidate = t
                 view.showCandidateData(t)
             }
 
             override fun onError(e: Throwable?) {
             }
         })
+    }
+
+    fun textToSpeech() {
+        var speech = candidate.name + ".    " + candidate.partido + ".    " + " Sus propuestas son: "
+        speech += candidate.proposals.reduce { speech, proposal -> speech + ".     " + proposal }
+        view.saySpeech(speech)
     }
 }
